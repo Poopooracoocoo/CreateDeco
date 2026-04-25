@@ -48,18 +48,18 @@ public class SpriteShifts {
 
     for (String metal : ItemRegistry.METAL_TYPES.keySet()) {
       String path = "block/palettes/sheet_metal/" + metal.toLowerCase(Locale.ROOT).replaceAll(" ", "_") + "_sheet_metal";
-      ResourceLocation blockTexture     = ResourceLocation.tryBuild(CreateDecoMod.MOD_ID, path);
-      ResourceLocation connectedTexture = ResourceLocation.tryBuild(CreateDecoMod.MOD_ID, path + "_connected");
+      ResourceLocation blockTexture     = new ResourceLocation(CreateDecoMod.MOD_ID, path);
+      ResourceLocation connectedTexture = new ResourceLocation(CreateDecoMod.MOD_ID, path + "_connected");
       SHEET_METAL_SIDES.put(metal, make(AllCTTypes.VERTICAL, blockTexture, connectedTexture));
 
       path = "block/palettes/catwalks/" + metal.toLowerCase(Locale.ROOT).replaceAll(" ", "_") + "_catwalk";
-      blockTexture     = ResourceLocation.tryBuild(CreateDecoMod.MOD_ID, path);
-      connectedTexture = ResourceLocation.tryBuild(CreateDecoMod.MOD_ID, path + "_connected");
+      blockTexture     = new ResourceLocation(CreateDecoMod.MOD_ID, path);
+      connectedTexture = new ResourceLocation(CreateDecoMod.MOD_ID, path + "_connected");
       CATWALK_TOPS.put(metal, make(AllCTTypes.OMNIDIRECTIONAL, blockTexture, connectedTexture));
 
       path = "block/palettes/windows/" + metal.toLowerCase(Locale.ROOT).replaceAll(" ", "_") + "_window";
-      blockTexture     = ResourceLocation.tryBuild(CreateDecoMod.MOD_ID, path);
-      connectedTexture = ResourceLocation.tryBuild(CreateDecoMod.MOD_ID, path + "_connected");
+      blockTexture     = new ResourceLocation(CreateDecoMod.MOD_ID, path);
+      connectedTexture = new ResourceLocation(CreateDecoMod.MOD_ID, path + "_connected");
       METAL_WINDOWS.put(metal, make(AllCTTypes.VERTICAL, blockTexture, connectedTexture));
     }
   }
